@@ -35,8 +35,8 @@ Features:
 
 SETUP STEPS:
 
-1. it clone https://github.com/your-username/smart-research-assistant.git
-cd smart-research-assistant
+1. git clone https://github.com/Khushi2210/genai_project.git
+cd genai_project
 2. pip install -r requirements.txt
 3. pip install streamlit transformers sentence-transformers summarizer PyMuPDF
 4. streamlit run ui2.py
