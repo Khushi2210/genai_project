@@ -1,0 +1,9 @@
+streamlit==1.32.2
+transformers==4.40.2
+summarizer==0.0.7
+sentence-transformers==2.7.0
+PyMuPDF==1.23.26
+torch>=2.0.0
+numpy>=1.23.0
+scipy>=1.10.0
+scikit-learn>=1.3.0
