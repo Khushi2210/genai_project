@@ -35,9 +35,16 @@ Features:
 
 SETUP STEPS:
 
-1. git clone https://github.com/Khushi2210/genai_project.git
-2. cd genai_project
-3. pip install -r requirements.txt
-4. pip install streamlit transformers sentence-transformers summarizer PyMuPDF
-5. streamlit run ui2.py
+# Clone the repository
+git clone https://github.com/Khushi2210/genai_project.git
+
+# Navigate into the project directory
+cd genai_project
+
+# Install all dependencies
+pip install -r requirements.txt
+
+# Run the Streamlit app
+streamlit run ui2.py
+
 
