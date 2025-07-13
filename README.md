@@ -1,6 +1,6 @@
-#Smart Research Assistant:
+# Smart Research Assistant:
 
-#Overview:
+# Overview:
 An interactive AI-powered tool that processes user-uploaded PDF/TXT documents and enables semantic understanding via:
 Auto summarization
 Intelligent Q&A with snippet references
