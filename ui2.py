@@ -1,12 +1,11 @@
 import streamlit as st
+st.set_page_config(page_title="Smart Research Assistant", layout="wide")
+st.title("Smart Research Assistant")
 from app2 import (
     load_document, summarize_text,
     answer_question, generate_challenge_questions,
     evaluate_answer
 )
-
-st.set_page_config(page_title="Smart Research Assistant", layout="wide")
-st.title("Smart Research Assistant")
 
 uploaded = st.file_uploader("Upload a PDF or TXT file", type=["pdf", "txt"])
 
@@ -18,7 +17,7 @@ if uploaded:
             st.session_state.text = load_document(uploaded, ext)
             st.session_state.summary = summarize_text(st.session_state.text)
 
-    st.subheader("Auto Summary (≤150 words)")
+    st.subheader("Auto Summary")
     st.info(st.session_state.summary)
 
     mode = st.radio("Choose Interaction Mode:", ["Ask Anything", "Challenge Me"])

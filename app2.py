@@ -91,7 +91,7 @@ def answer_question(text: str, question: str) -> Dict:
 
 # Challenge Question Generator
 
-def generate_challenge_questions(text: str, skip_words: int = 180) -> List[Dict]:
+def generate_challenge_questions(text: str, skip_words: int = 200) -> List[Dict]:
     """
     Skip first N words (default 300) to avoid author/abstract info, then
     generate 3 meaningful logic/comprehension questions using BERT-based method.
