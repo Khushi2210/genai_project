@@ -23,14 +23,15 @@ if uploaded:
     mode = st.radio("Choose Interaction Mode:", ["Ask Anything", "Challenge Me"])
 
     # Ask Anything Mode
+    # Ask Anything Mode
     if mode == "Ask Anything":
         if "qa_history" not in st.session_state:
             st.session_state.qa_history = []
 
-        question = st.text_input("Ask a question about the document:")
+        question = st.text_input("Ask a question about the document:", key="question_input")
 
         if st.button("Get Answer"):
-            with st.spinner("Analyzing..."):
+            with st.spinner("Analyzing document and formulating answer..."):
                 result = answer_question(st.session_state.text, question)
                 st.session_state.qa_history.append((question, result))
                 st.experimental_rerun()
@@ -39,9 +40,19 @@ if uploaded:
             st.markdown("### Conversation History")
             for idx, (q, r) in enumerate(reversed(st.session_state.qa_history), 1):
                 st.markdown(f"**Q{idx}:** {q}")
+                
+                # Display answer with confidence indicator
+                # confidence_color = "green" if r.get("confidence", 0) > 0.7 else "orange" if r.get("confidence", 0) > 0.5 else "red"
                 st.markdown(f"**A{idx}:** {r['answer']}")
-                with st.expander("Show Supporting Context"):
-                    st.code(r["context"])
+                # # st.markdown(f"*Confidence: :{confidence_color}[{r.get('confidence', 0)*100:.0f}%]*")
+                
+                # Show supporting context in expander
+                with st.expander("Show Justification"):
+                    st.write(r["context"])
+                    st.markdown("---")
+                    st.caption("Full context:")
+                    st.write(r.get("full_context", ""))
+                
                 st.markdown("---")
 
         if st.button("Clear Conversation"):
